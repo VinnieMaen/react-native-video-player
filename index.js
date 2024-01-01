@@ -409,7 +409,7 @@ export default class VideoPlayer extends Component {
         style={[styles.playButton, customStyles.playButton]}
         onPress={this.onStartPress}
       >
-        <FontAwesome5 style={[styles.playArrow, customStyles.playArrow]} name="play-arrow" size={42} />
+        <FontAwesome5 style={[styles.playArrow, customStyles.playArrow]} name="play" size={42} />
       </TouchableOpacity>
     );
   }
@@ -485,7 +485,7 @@ export default class VideoPlayer extends Component {
           onPress={this.onPlayPress}
           style={[customStyles.controlButton, customStyles.playControl]}
         >
-          <MaterialIcons
+          <FontAwesome5
             style={[styles.playControl, customStyles.controlIcon, customStyles.playIcon]}
             name={this.state.isPlaying ? 'pause' : 'play'}
             size={32}
