@@ -485,9 +485,9 @@ export default class VideoPlayer extends Component {
           onPress={this.onPlayPress}
           style={[customStyles.controlButton, customStyles.playControl]}
         >
-          <Icon
+          <MaterialIcons
             style={[styles.playControl, customStyles.controlIcon, customStyles.playIcon]}
-            name={this.state.isPlaying ? 'pause' : 'play-arrow'}
+            name={this.state.isPlaying ? 'pause' : 'play'}
             size={32}
           />
         </TouchableOpacity>
