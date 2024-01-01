@@ -409,7 +409,7 @@ export default class VideoPlayer extends Component {
         style={[styles.playButton, customStyles.playButton]}
         onPress={this.onStartPress}
       >
-        <FontAwesome5 style={[styles.playArrow, customStyles.playArrow]} name="play" size={42} />
+        <FontAwesome5 style={[styles.playArrow, customStyles.playArrow]} name="play" size={36} />
       </TouchableOpacity>
     );
   }
@@ -488,7 +488,7 @@ export default class VideoPlayer extends Component {
           <FontAwesome5
             style={[styles.playControl, customStyles.controlIcon, customStyles.playIcon]}
             name={this.state.isPlaying ? 'pause' : 'play'}
-            size={32}
+            size={24}
           />
         </TouchableOpacity>
         {this.renderSeekBar()}
@@ -513,7 +513,7 @@ export default class VideoPlayer extends Component {
             <AntDesign
               style={[styles.extraControl, customStyles.controlIcon]}
               name="arrowsalt"
-              size={32}
+              size={24}
             />
           </TouchableOpacity>
         )}
