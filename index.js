@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Image, ImageBackground, Platform, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { ViewPropTypes, ImagePropTypes } from 'deprecated-react-native-prop-types';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { FontAwesome5, AntDesign, FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import Video from 'react-native-video'; // eslint-disable-line
 
 const BackgroundImage = ImageBackground || Image; // fall back to Image if RN < 0.46
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   },
   activeDurationText: {
     paddingLeft: 8,
-    paddingRight:0,
+    paddingRight: 0,
     paddingBottom: 0,
     paddingTop: 0
   },
@@ -136,7 +136,7 @@ export default class VideoPlayer extends Component {
       duration: 0,
       isSeeking: false,
     };
-    
+
     this.seekBarWidth = 200;
     this.wasPlayingBeforeSeek = props.autoplay;
     this.seekTouchStart = 0;
@@ -409,7 +409,7 @@ export default class VideoPlayer extends Component {
         style={[styles.playButton, customStyles.playButton]}
         onPress={this.onStartPress}
       >
-        <Icon style={[styles.playArrow, customStyles.playArrow]} name="play-arrow" size={42} />
+        <FontAwesome5 style={[styles.playArrow, customStyles.playArrow]} name="play-arrow" size={42} />
       </TouchableOpacity>
     );
   }
@@ -446,12 +446,12 @@ export default class VideoPlayer extends Component {
       >
         <View
           style={[
-            this.state.progress && {flexGrow: this.state.progress },
+            this.state.progress && { flexGrow: this.state.progress },
             styles.seekBarProgress,
             customStyles.seekBarProgress,
           ]}
         />
-        { !fullWidth && !disableSeek ? (
+        {!fullWidth && !disableSeek ? (
           <View
             style={[
               styles.seekBarKnob,
@@ -467,7 +467,7 @@ export default class VideoPlayer extends Component {
             onResponderRelease={this.onSeekRelease}
             onResponderTerminate={this.onSeekRelease}
           />
-        ) : null }
+        ) : null}
         <View style={[
           styles.seekBarBackground,
           this.state.progress && { flexGrow: 1 - this.state.progress },
@@ -494,14 +494,14 @@ export default class VideoPlayer extends Component {
         {this.renderSeekBar()}
         {showDuration && (
           <>
-            <TextInput style={[styles.durationText, styles.activeDurationText, customStyles.durationText]} editable={false} ref={e=> this.currentTime=e} value={getDurationTime(0)}/>
+            <TextInput style={[styles.durationText, styles.activeDurationText, customStyles.durationText]} editable={false} ref={e => this.currentTime = e} value={getDurationTime(0)} />
             <Text style={[styles.durationText, customStyles.durationText]}>/</Text>
             <Text style={[styles.durationText, customStyles.durationText]}>{getDurationTime(this.state.duration)}</Text>
           </>
         )}
         {this.props.muted ? null : (
           <TouchableOpacity onPress={this.onMutePress} style={customStyles.controlButton}>
-            <Icon
+            <FontAwesome5
               style={[styles.extraControl, customStyles.controlIcon]}
               name={this.state.isMuted ? 'volume-off' : 'volume-up'}
               size={24}
@@ -510,9 +510,9 @@ export default class VideoPlayer extends Component {
         )}
         {(Platform.OS === 'android' || this.props.disableFullscreen) ? null : (
           <TouchableOpacity onPress={this.onToggleFullScreen} style={customStyles.controlButton}>
-            <Icon
+            <AntDesign
               style={[styles.extraControl, customStyles.controlIcon]}
-              name="fullscreen"
+              name="arrowsalt"
               size={32}
             />
           </TouchableOpacity>
