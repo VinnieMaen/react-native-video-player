@@ -1,3 +1,6 @@
+# About
+Forked to change react-native-vector-icons to @expo/vector-icons.
+
 # Why do you use this library?
 
 I'd like to learn more about why people use this library over others. If you have the time, please leave a reaction at https://github.com/cornedor/react-native-video-player/discussions/166
